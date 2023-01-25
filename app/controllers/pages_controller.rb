@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  http_basic_authenticate_with name: "admin", password: "s3cur3passw0rd", except: [:permalink]
+  http_basic_authenticate_with name: "admin", password: "s3cur3passw0rd", except: [:show]
   before_action :set_page, only: %i[show edit update destroy ]
 
   # GET /pages or /pages.json
@@ -9,12 +9,6 @@ class PagesController < ApplicationController
 
   # GET /pages/1
   def show
-  end
-
-  # GET /pages/permalink
-  def permalink
-    @page = Page.find_by(permalink: params[:permalink])
-    redirect_to :root if @page.nil?
   end
 
   # GET /pages/new

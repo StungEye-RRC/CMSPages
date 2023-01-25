@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  resources :pages, constraints: { id: /\d+/ }
-  get "/pages/:permalink" => "pages#permalink", as: :permalink
+  resources :pages
 
   get 'home/index'
   root 'home#index'
