@@ -6,7 +6,9 @@
   <% @pages.each do |page| %>
     <%= render page %>
     <p>
-      <%= link_to "Show this page", page %>
+      <%= link_to "Show this page", page %>,
+      <%= link_to "Edit this page", edit_page_path(page) %>,
+      <%= button_to "Destroy this page", page, method: :delete %>
     </p>
   <% end %>
 </div>
