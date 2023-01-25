@@ -1,7 +1,13 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+Page.delete_all
+
+Page.create(
+  title:     "About the Data",
+  content:   "The data powering this website was provided by a Kaggle dataset about the IMDB movie ratings.",
+  permalink: "about_the_data"
+)
+
+Page.create(
+  title:     "Contact Us",
+  content:   "If you want to chat about movies email me at wally.glutton@mailinator.com.",
+  permalink: "contact_us"
+)

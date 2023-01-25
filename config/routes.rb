@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :pages
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :pages, constraints: { id: /\d+/ }
+  get "/pages/:permalink" => "pages#permalink", as: :permalink
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get 'home/index'
+  root 'home#index'
 end
